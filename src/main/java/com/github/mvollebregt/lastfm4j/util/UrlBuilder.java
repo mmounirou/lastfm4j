@@ -15,7 +15,6 @@ package com.github.mvollebregt.lastfm4j.util;
 // You should have received a copy of the GNU General Public License
 // along with SpotifyDiscoverer.  If not, see <http://www.gnu.org/licenses/>.
 
-import groovy.util.MapEntry;
 
 import java.net.MalformedURLException;
 import java.net.URL;
