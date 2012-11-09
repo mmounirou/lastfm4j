@@ -41,10 +41,10 @@ public class UserService {
         urlBuilder.setApiKeyResolver(new FileApiKeyResolver());
     }
 
-    public List<Artist> getTopArtists(String user, String period) throws IOException, SAXException {
+    public List<Artist> getTopArtists(String user, Period period) throws IOException, SAXException {
         LinkedHashMap<String, String> parameters = new LinkedHashMap<String, String>();
         parameters.put("user", user);
-        parameters.put("period", period);
+        parameters.put("period", period.getName());
         URL url = urlBuilder.buildUrl("user.gettopartists", parameters);
         InputStream stream = url.openStream();
         return parser.parse(stream);

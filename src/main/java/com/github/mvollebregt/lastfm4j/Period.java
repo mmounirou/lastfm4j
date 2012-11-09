@@ -18,12 +18,40 @@ package com.github.mvollebregt.lastfm4j;
 /**
  * @author Michel Vollebregt
  */
-public interface Period {
+public enum Period {
 
-    static String OVERALL = "overall";
-    static String _7DAY = "7day";
-    static String _3MONTH = "3month";
-    static String _6MONTH = "6month";
-    static String _12MONTH = "12month";
+    OVERALL("overall"),
+    _7DAY("7day"),
+    _3MONTH("3month"),
+    _6MONTH("6month"),
+    _12MONTH("12month");
+    
+    private String m_val;
 
+	private Period(String strVal)
+	{
+		m_val = strVal;
+	}
+
+	public static Period getByName(String strVal)
+	{
+		for ( Period period : values() )
+		{
+			if(period.m_val.equalsIgnoreCase(strVal))
+			{
+				return period;
+			}
+		}
+		return null;
+	}
+
+	public String getName()
+	{	return m_val;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return m_val;
+	}
 }
